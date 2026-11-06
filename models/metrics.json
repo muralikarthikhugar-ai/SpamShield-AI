@@ -1,0 +1,117 @@
+{
+    "best_model": "Linear SVM",
+    "best_f1_score": 0.9561752988047809,
+    "training_samples": 4126,
+    "testing_samples": 1032,
+    "results": {
+        "Multinomial Naive Bayes": {
+            "accuracy": 0.9631782945736435,
+            "precision": 1.0,
+            "recall": 0.703125,
+            "f1_score": 0.8256880733944955,
+            "classification_report": {
+                "Ham": {
+                    "precision": 0.9596602972399151,
+                    "recall": 1.0,
+                    "f1-score": 0.9794149512459371,
+                    "support": 904.0
+                },
+                "Spam": {
+                    "precision": 1.0,
+                    "recall": 0.703125,
+                    "f1-score": 0.8256880733944955,
+                    "support": 128.0
+                },
+                "accuracy": 0.9631782945736435,
+                "macro avg": {
+                    "precision": 0.9798301486199575,
+                    "recall": 0.8515625,
+                    "f1-score": 0.9025515123202164,
+                    "support": 1032.0
+                },
+                "weighted avg": {
+                    "precision": 0.964663671225662,
+                    "recall": 0.9631782945736435,
+                    "f1-score": 0.9603480516674637,
+                    "support": 1032.0
+                }
+            }
+        },
+        "Logistic Regression": {
+            "accuracy": 0.9854651162790697,
+            "precision": 0.937984496124031,
+            "recall": 0.9453125,
+            "f1_score": 0.9416342412451362,
+            "classification_report": {
+                "Ham": {
+                    "precision": 0.9922480620155039,
+                    "recall": 0.9911504424778761,
+                    "f1-score": 0.991698948533481,
+                    "support": 904.0
+                },
+                "Spam": {
+                    "precision": 0.937984496124031,
+                    "recall": 0.9453125,
+                    "f1-score": 0.9416342412451362,
+                    "support": 128.0
+                },
+                "accuracy": 0.9854651162790697,
+                "macro avg": {
+                    "precision": 0.9651162790697674,
+                    "recall": 0.968231471238938,
+                    "f1-score": 0.9666665948893085,
+                    "support": 1032.0
+                },
+                "weighted avg": {
+                    "precision": 0.9855176972537708,
+                    "recall": 0.9854651162790697,
+                    "f1-score": 0.9854893724357018,
+                    "support": 1032.0
+                }
+            }
+        },
+        "Linear SVM": {
+            "accuracy": 0.9893410852713178,
+            "precision": 0.975609756097561,
+            "recall": 0.9375,
+            "f1_score": 0.9561752988047809,
+            "classification_report": {
+                "Ham": {
+                    "precision": 0.9911991199119912,
+                    "recall": 0.9966814159292036,
+                    "f1-score": 0.9939327082184225,
+                    "support": 904.0
+                },
+                "Spam": {
+                    "precision": 0.975609756097561,
+                    "recall": 0.9375,
+                    "f1-score": 0.9561752988047809,
+                    "support": 128.0
+                },
+                "accuracy": 0.9893410852713178,
+                "macro avg": {
+                    "precision": 0.9834044380047761,
+                    "recall": 0.9670907079646018,
+                    "f1-score": 0.9750540035116018,
+                    "support": 1032.0
+                },
+                "weighted avg": {
+                    "precision": 0.9892655554078758,
+                    "recall": 0.9893410852713178,
+                    "f1-score": 0.9892496186787461,
+                    "support": 1032.0
+                }
+            }
+        }
+    },
+    "confusion_matrix": [
+        [
+            901,
+            3
+        ],
+        [
+            8,
+            120
+        ]
+    ]
+}
