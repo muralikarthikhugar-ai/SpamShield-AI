@@ -2,6 +2,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+import os
 
 # ----------------------------------
 # PAGE CONFIGURATION
@@ -13,7 +14,13 @@ st.set_page_config(
     layout="wide"
 )
 
-API_URL = "http://127.0.0.1:5000"
+try:
+    API_URL = st.secrets["FLASK_API_URL"]
+except Exception:
+    API_URL = os.getenv(
+        "FLASK_API_URL",
+        "http://127.0.0.1:5000"
+    )
 
 # ----------------------------------
 # CUSTOM CSS
