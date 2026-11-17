@@ -1,253 +1,254 @@
-
-<div align="center">
-
 # 🛡️ SpamShield AI
 
-### Intelligent SMS Spam Detection Using Machine Learning
+### Intelligent SMS Spam Detection Using Machine Learning & NLP
 
-**Detect. Analyse. Protect.**
+SpamShield AI is an end-to-end Machine Learning and Natural Language Processing project that identifies whether an SMS message is **Spam** or **Ham (Legitimate)**.
 
-A machine learning-powered SMS classification system that identifies suspicious and legitimate text messages using Natural Language Processing and supervised learning.
+The system uses TF-IDF for text feature extraction and a Linear Support Vector Machine (SVM) classifier to analyze messages and make predictions. It also provides an interactive Streamlit web application and a Flask-based REST API for real-time and batch predictions.
 
-<br/>
-
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-REST_API-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-
-![Status](https://img.shields.io/badge/Project-Completed-2ea44f?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
-
-</div>
+<p align="center">
+  <a href="https://spamshield-ai-ml.streamlit.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Open%20SpamShield%20AI-brightgreen?style=for-the-badge&logo=streamlit" alt="Live Demo">
+  </a>
+  <a href="https://github.com/muralikarthikhugar-ai/SpamShield-AI">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" alt="GitHub Repository">
+  </a>
+</p>
 
 ---
 
-## 📌 About the Project
+## 🌐 Live Application
 
-**SpamShield AI** is a machine learning-based SMS spam detection application developed using Python.
+**Try SpamShield AI here:**
 
-The system analyses the content of SMS messages and classifies them into two categories:
+https://spamshield-ai-ml.streamlit.app/
 
-- 🟢 **HAM** – Legitimate or normal messages.
-- 🔴 **SPAM** – Unwanted, suspicious or potentially fraudulent messages.
+The application allows users to:
+- Enter an SMS message and check whether it is spam.
+- View the prediction and estimated confidence.
+- Analyze multiple messages through batch processing.
+- Upload CSV files for bulk message analysis.
 
-The application uses TF-IDF for text feature extraction and compares multiple machine learning algorithms to select the best-performing model.
+> Note: The first request may take longer if the free hosting service has been inactive.
 
-A Flask REST API handles predictions, while Streamlit provides an interactive user interface.
+---
+
+## 📸 Screenshots
+
+### 1. Application Dashboard
+
+![SpamShield AI Dashboard](screenshots/dashboard.png)
+
+### 2. Single Message Detection
+
+![Single Message Detection](screenshots/single-detection.png)
+
+### 3. Batch Message Detection
+
+![Batch Message Detection](screenshots/batch-detection.png)
+
+---
 
 ## ✨ Key Features
 
-| Feature | Description |
-|---|---|
-| 📩 Single SMS Detection | Analyse one message at a time |
-| 📚 Batch Detection | Analyse multiple messages together |
-| 🧠 ML Classification | Uses a trained Linear SVM model |
-| 📊 Probability Scores | Displays estimated HAM and SPAM probabilities |
-| 🔌 REST API | Flask-based prediction endpoints |
-| 💻 Interactive Dashboard | User-friendly Streamlit interface |
-| ❤️ API Health Monitoring | Displays Flask and model connection status |
-| 📥 CSV Export | Download batch prediction results |
+- **Real-Time SMS Detection:** Classifies individual SMS messages as Spam or Ham.
+- **Machine Learning Classification:** Uses a trained Linear SVM model.
+- **TF-IDF Feature Extraction:** Converts text messages into numerical features.
+- **Confidence Scores:** Displays estimated probabilities for predictions.
+- **Batch Prediction:** Processes multiple messages in a single request.
+- **CSV Processing:** Supports bulk message analysis using CSV files.
+- **REST API:** Provides Flask API endpoints for external integration.
+- **Model Comparison:** Evaluates multiple machine learning algorithms before selecting the final model.
+- **Cloud Deployment:** Streamlit frontend and Flask API are hosted online.
 
 ---
 
-## 🖥️ Application Preview
+## 🧠 How It Works
 
-<!-- Add your screenshots in a screenshots/ folder -->
-
-### Main Dashboard
-![SpamShield AI Dashboard](screenshots/dashboard.png)
-
-### Single SMS Detection
-![Single SMS Detection](screenshots/single-detection.png)
-
-### Batch SMS Detection
-![Batch SMS Detection](screenshots/batch-detection.png)
-
-
----
-
-## ⚙️ Machine Learning Approach
-
-The project follows a complete machine learning workflow.
+SpamShield AI follows a machine learning pipeline to classify SMS messages.
 
 ```text
-SMS Dataset
-     │
-     ▼
-Data Cleaning
-     │
-     ▼
-Text Preprocessing
-     │
-     ▼
-TF-IDF Vectorization
-     │
-     ▼
-Model Training
-     │
-     ▼
-Model Comparison
-     │
-     ▼
-Best Model Selection
-     │
-     ▼
-Flask REST API
-     │
-     ▼
-Streamlit Dashboard
-     │
-     ▼
-HAM / SPAM Prediction
+       User Input
+           |
+           v
+    SMS Message
+           |
+           v
+    Text Preprocessing
+           |
+           v
+    TF-IDF Vectorization
+           |
+           v
+    Trained Linear SVM
+           |
+           v
+    Prediction & Probability
+           |
+           v
+     Spam or Ham
+           |
+           v
+    Display Result
 ```
 
-### Algorithms Compared
+### 1. Dataset Collection
 
-Three classification algorithms were trained and evaluated.
+The project uses the SMS Spam Collection Dataset, which contains SMS messages labeled as:
 
-| Algorithm | Accuracy | Spam Precision | Spam Recall | Spam F1 |
+- **Ham:** Legitimate messages.
+- **Spam:** Unwanted or suspicious messages.
+
+The original dataset contains 5,574 messages. The prepared dataset used during model development contained 5,158 records.
+
+### 2. Text Preprocessing
+
+Text data is prepared before it is passed to the machine learning model.
+
+The preprocessing and feature extraction pipeline prepares the message for classification.
+
+### 3. Feature Extraction Using TF-IDF
+
+Machine learning algorithms cannot directly understand raw text.
+
+TF-IDF (Term Frequency-Inverse Document Frequency) converts text into numerical features that represent the importance of words in the messages.
+
+This allows the classifier to identify patterns associated with spam and legitimate messages.
+
+### 4. Model Training
+
+Multiple machine learning algorithms were trained and evaluated.
+
+The models were compared using:
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+### 5. Final Prediction
+
+After evaluation, the best-performing model was selected and saved.
+
+The application loads this trained model to classify new SMS messages.
+
+---
+
+## 🤖 Machine Learning Models
+
+Three machine learning algorithms were compared during development.
+
+| Model | Accuracy | Spam Precision | Spam Recall | Spam F1-Score |
 |---|---:|---:|---:|---:|
 | Multinomial Naive Bayes | 96.32% | 100.00% | 70.31% | 82.57% |
 | Logistic Regression | 98.55% | 93.80% | 94.53% | 94.16% |
 | **Linear SVM** | **98.93%** | **97.56%** | **93.75%** | **95.62%** |
 
-### Selected Model: Linear SVM
+### Why Linear SVM?
 
-Linear SVM was selected because it achieved the highest F1-score for the spam class among the evaluated models.
+Linear SVM achieved the highest test accuracy and spam F1-score among the three evaluated models.
 
-The final pipeline includes:
+It was selected as the final model because it provided a strong balance between identifying spam messages and avoiding false spam classifications.
 
-- TF-IDF Vectorizer
-- Linear Support Vector Classifier
-- CalibratedClassifierCV for estimated class probabilities
+### Final Model
 
-### Model Evaluation
+- Algorithm: Linear Support Vector Machine
+- Feature Extraction: TF-IDF
+- Probability Estimation: Calibrated Classifier
+- Saved Model: `spam_model.pkl`
 
-**Test-set Accuracy: 98.93%**
+**Important:** The 98.93% accuracy is the result on the held-out test dataset. Actual performance may vary with new messages and real-world data.
 
-Confusion Matrix:
+---
 
-| | Predicted HAM | Predicted SPAM |
-|---|---:|---:|
-| Actual HAM | 901 | 3 |
-| Actual SPAM | 8 | 120 |
+## 📊 Model Evaluation
 
-The evaluation was performed using a stratified 80:20 train-test split.
+The selected model was evaluated using a confusion matrix.
+
+```text
+                 Predicted
+              Ham       Spam
+
+Actual Ham     901        3
+
+Actual Spam      8      120
+```
+
+| Metric | Result |
+|---|---:|
+| True Negatives | 901 |
+| False Positives | 3 |
+| False Negatives | 8 |
+| True Positives | 120 |
+
+### Evaluation Metrics
+
+- **Accuracy:** Measures the overall percentage of correct predictions.
+- **Precision:** Measures how many messages predicted as spam were actually spam.
+- **Recall:** Measures how many actual spam messages were correctly detected.
+- **F1-Score:** Balances precision and recall.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Technology | Usage |
+| Category | Technologies |
 |---|---|
-| Python | Core development |
-| Pandas | Data processing |
-| NumPy | Numerical operations |
-| Scikit-learn | Machine learning |
-| TF-IDF | Text feature extraction |
-| Matplotlib | Data visualization |
-| Seaborn | Exploratory data analysis |
-| Flask | Backend REST API |
-| Streamlit | Frontend dashboard |
-| Joblib | Model serialization |
-| Postman | API testing |
-| uv | Dependency management |
+| Programming Language | Python |
+| Machine Learning | Scikit-learn |
+| NLP & Feature Extraction | TF-IDF |
+| ML Algorithm | Linear SVM |
+| Probability Calibration | CalibratedClassifierCV |
+| Frontend | Streamlit |
+| Backend | Flask |
+| Data Processing | Pandas, NumPy |
+| Model Serialization | Joblib |
+| API Server | Gunicorn |
+| Version Control | Git & GitHub |
+| Frontend Hosting | Streamlit Community Cloud |
+| Backend Hosting | Render |
 
 ---
 
 ## 📂 Project Structure
 
+The main project structure is organized as follows:
+
 ```text
 SpamShield-AI/
 │
-├── data/
-│   └── .gitkeep
-│
-├── models/
-│   ├── spam_model.pkl
-│   └── metrics.json
-│
-├── screenshots/
-│   ├── dashboard.png
-│   ├── single-detection.png
-│   └── batch-detection.png
-│
 ├── app.py
 ├── streamlit_app.py
-├── train.py
-├── eda.py
-│
+├── train_model.py
 ├── requirements.txt
-├── pyproject.toml
-├── uv.lock
-├── .gitignore
-└── README.md
+├── README.md
+│
+├── models/
+│   └── spam_model.pkl
+│
+├── data/
+│   └── spam.csv
+│
+└── screenshots/
+    ├── dashboard.png
+    ├── single-detection.png
+    └── batch-detection.png
 ```
 
-> The original CSV datasets are intentionally not included in this GitHub repository. Download instructions are provided below.
+*Note: This is the documented project layout. Adjust filenames or folders if your actual repository uses different names.*
 
 ---
 
-## 📚 Dataset Information
+## ⚙️ Installation and Setup
 
-This project uses the **SMS Spam Collection Dataset**.
-
-The dataset contains 5,574 English SMS messages labelled as either HAM or SPAM.
-
-### Download the Dataset
-
-The original dataset is available from these sources:
-
-| Source | Link |
-|---|---|
-| UCI Machine Learning Repository | [Download Dataset](https://archive.ics.uci.edu/dataset/228/sms+spam+collection) |
-| Kaggle | [View Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) |
-
-**Primary source:** UCI Machine Learning Repository.
-
-### Dataset Setup
-
-After downloading the dataset:
-
-1. Extract the downloaded archive.
-2. Place the original CSV file in the `data/` directory.
-3. Ensure that the filename matches what your training code expects (`spam.csv`).
-4. Run the data cleaning and training scripts if you want to reproduce the model.
-
-```text
-data/
-└── spam.csv
-```
-
-The cleaned dataset is generated locally during the data preparation process.
-
-### Dataset Attribution
-
-Dataset: SMS Spam Collection
-
-Creators: Tiago Almeida and José María Gómez Hidalgo.
-
-Citation:
-
-Almeida, T. & Hidalgo, J. (2011). SMS Spam Collection [Dataset]. UCI Machine Learning Repository.
-
-DOI: [10.24432/C5CC84](https://doi.org/10.24432/C5CC84)
-
-Licence: Creative Commons Attribution 4.0 International (CC BY 4.0).
-
----
-
-## 🚀 Installation and Setup
+Follow these steps to run SpamShield AI locally.
 
 ### Prerequisites
 
-Install the following:
-
-- Python 3.10 or later
+- Python 3.9 or higher
 - Git
-- uv package manager
-- VS Code (recommended)
+- pip
+- A code editor such as VS Code
 
 ### Step 1: Clone the Repository
 
@@ -255,136 +256,255 @@ Install the following:
 git clone https://github.com/muralikarthikhugar-ai/SpamShield-AI.git
 ```
 
+Navigate to the project directory:
+
 ```bash
 cd SpamShield-AI
 ```
 
-### Step 2: Create Virtual Environment
+### Step 2: Create a Virtual Environment
 
 ```bash
-uv venv
+python -m venv venv
+```
+
+Activate the environment.
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / macOS:**
+
+```bash
+source venv/bin/activate
 ```
 
 ### Step 3: Install Dependencies
 
 ```bash
-uv sync
+pip install -r requirements.txt
 ```
 
-Alternatively, use:
+### Step 4: Run the Flask API
+
+Start the Flask backend:
 
 ```bash
-uv pip install -r requirements.txt
+python app.py
 ```
 
-Use the method matching the dependency files in the repository.
+The API will run locally using the configured Flask port.
 
-### Step 4: Start Flask Backend
+### Step 5: Run the Streamlit Application
 
-Open the first terminal:
+Open another terminal, activate the same virtual environment, and run:
 
 ```bash
-uv run python app.py
+streamlit run streamlit_app.py
 ```
 
-Flask API:
-
-```text
-http://127.0.0.1:5000
-```
-
-### Step 5: Start Streamlit Frontend
-
-Open a second terminal:
-
-```bash
-uv run python -m streamlit run streamlit_app.py
-```
-
-Open the application:
+The Streamlit application will normally be available at:
 
 ```text
 http://localhost:8501
 ```
 
-**Important:** Start Flask before using Streamlit. Keep both terminals running.
-
-> The repository includes the trained model, so you do not need to download the dataset or retrain the model just to run the application. The dataset is needed when reproducing the training process.
-
 ---
 
 ## 🔌 REST API Documentation
 
-The Flask backend exposes four endpoints.
+SpamShield AI includes a Flask-based REST API for making spam predictions.
 
-| HTTP Method | Endpoint | Purpose |
+### Base API
+
+The deployed backend is hosted on Render.
+
+Set the backend URL in your Streamlit configuration using the `FLASK_API_URL` environment variable or Streamlit secrets.
+
+### Available Endpoints
+
+| Method | Endpoint | Description |
 |---|---|---|
-| GET | `/` | API information |
-| GET | `/health` | Check backend and model health |
-| POST | `/predict` | Predict one SMS |
-| POST | `/predict/batch` | Predict multiple SMS messages |
+| GET | `/` | Returns API information |
+| GET | `/health` | Checks API and model status |
+| POST | `/predict` | Predicts a single SMS message |
+| POST | `/predict/batch` | Predicts multiple SMS messages |
 
-### 1. Health Check
+### 1. API Information
 
-```http
-GET http://127.0.0.1:5000/health
-```
-
-### 2. Single Message Prediction
+**Request:**
 
 ```http
-POST http://127.0.0.1:5000/predict
+GET /
 ```
 
-Request body:
+Returns basic API information, including project name, model, version, and status.
+
+### 2. Health Check
+
+**Request:**
+
+```http
+GET /health
+```
+
+Checks whether the API is running and the machine learning model is loaded.
+
+### 3. Single Message Prediction
+
+**Request:**
+
+```http
+POST /predict
+Content-Type: application/json
+```
+
+**Request Body:**
 
 ```json
 {
-  "message": "Congratulations! You won a free gift. Claim now!"
+  "message": "Congratulations! You have won a free prize. Claim now!"
 }
 ```
 
-### 3. Batch Message Prediction
+The API processes the message and returns a spam classification with prediction information.
+
+### 4. Batch Message Prediction
+
+**Request:**
 
 ```http
-POST http://127.0.0.1:5000/predict/batch
+POST /predict/batch
+Content-Type: application/json
 ```
 
-Request body:
+**Request Body:**
 
 ```json
 {
   "messages": [
-    "Hey, are you coming to college tomorrow?",
+    "Hey, are we meeting today?",
     "Congratulations! You won a free gift. Claim now!",
-    "Please bring your laptop to class."
+    "Your appointment is confirmed."
   ]
 }
 ```
 
-The API returns a prediction and estimated spam and ham probabilities for each message.
+The API returns prediction results for the submitted messages.
+
+**Batch limit:** Up to 500 messages per request.
+
+---
+
+## 📚 Dataset Information
+
+**Dataset:** SMS Spam Collection Dataset
+
+**Source:** UCI Machine Learning Repository / Kaggle
+
+The dataset contains two categories:
+
+| Label | Description |
+|---|---|
+| Ham | Legitimate SMS messages |
+| Spam | Unwanted or suspicious SMS messages |
+
+The original dataset contains 5,574 messages. The prepared dataset used in this project contained 5,158 records.
+
+The dataset was used for training, testing, and evaluating the machine learning models.
+
+---
+
+## 🧪 Example Predictions
+
+### Example 1: Spam Message
+
+**Input:**
+
+```text
+Congratulations! You have won a free prize.
+Click here to claim your reward now!
+```
+
+**Expected classification:** Spam
+
+### Example 2: Legitimate Message
+
+**Input:**
+
+```text
+Hey, are we still meeting at 6 PM today?
+```
+
+**Expected classification:** Ham
+
+*These are illustrative examples. Actual predictions depend on the trained model.*
+
+---
+
+## 🚀 Deployment
+
+SpamShield AI is deployed using two hosting platforms.
+
+| Component | Platform |
+|---|---|
+| Streamlit Frontend | Streamlit Community Cloud |
+| Flask Backend API | Render |
+| Source Code | GitHub |
+
+### Live Links
+
+- **Web Application:** https://spamshield-ai-ml.streamlit.app/
+- **GitHub Repository:** https://github.com/muralikarthikhugar-ai/SpamShield-AI
+
+The Streamlit frontend communicates with the Flask API to get prediction results.
 
 ---
 
 ## 🔮 Future Enhancements
 
-- Multilingual SMS spam detection.
-- Support for regional languages.
-- Advanced NLP and transformer-based models.
-- Phishing URL analysis.
+Some possible improvements for future versions include:
+
+- User feedback collection for incorrect predictions.
+- Learning from verified user corrections.
+- Automated model retraining.
+- Multilingual spam message detection.
+- Improved detection of suspicious URLs and phishing messages.
+- Model performance monitoring.
 - Prediction history and analytics dashboard.
-- Cloud deployment.
-- Improved performance on new and unseen SMS messages.
+- Better handling of new and previously unseen spam patterns.
 
 ---
 
 ## ⚠️ Limitations
 
-- Model predictions depend on the training data and learned text patterns.
-- New spam techniques may not be detected correctly.
-- The model cannot verify the identity of the sender or the authenticity of a link.
-- Probability scores are estimates, not guarantees.
-- This application is an educational machine learning project, not a complete fraud-prevention system.
+- The current model is trained primarily on the SMS dataset used during development.
+- Performance may vary on messages containing languages or patterns not represented in the training data.
+- Prediction confidence is an estimate, not a guarantee that a message is safe.
+- The system should be used as a screening tool rather than the sole basis for deciding whether a message is legitimate.
+- New spam patterns may require additional verified training data and model updates.
+
+---
+
+## 📖 Key Learnings
+
+Through this project, I gained practical experience in:
+
+- Understanding and preparing text datasets.
+- Applying Natural Language Processing concepts.
+- Converting text into numerical features using TF-IDF.
+- Training and comparing machine learning algorithms.
+- Evaluating models using accuracy, precision, recall, and F1-score.
+- Understanding confusion matrices and classification errors.
+- Saving and loading trained machine learning models.
+- Integrating a machine learning model with Flask.
+- Building an interactive application using Streamlit.
+- Creating REST API endpoints for predictions.
+- Deploying a machine learning application using cloud platforms.
+- Managing project source code using Git and GitHub.
 
 ---
 
@@ -392,16 +512,33 @@ The API returns a prediction and estimated spam and ham probabilities for each m
 
 **Murali Karthik**
 
-Data Science | Machine Learning | Python
+Data Science Trainee | Python & Machine Learning
+
+Interested in:
+- Machine Learning
+- Artificial Intelligence
+- Natural Language Processing
+- Python Development
+- Generative AI
+
+### Connect With Me
+
+- **GitHub:** https://github.com/muralikarthikhugar-ai
+- **LinkedIn:** Add your LinkedIn profile URL
+- **Portfolio:** Add your portfolio URL
 
 ---
 
-<div align="center">
+## 📄 License
 
-### 🛡️ SpamShield AI
+This project is intended for educational and portfolio purposes.
 
-**Smarter SMS Classification Through Machine Learning**
+Add a `LICENSE` file to the repository if you want to distribute the project under a specific open-source license.
 
-If you find this project interesting, consider giving it a ⭐ on GitHub!
+---
 
-</div>
+## ⭐ Support
+
+If you find this project interesting, consider giving the repository a star on GitHub.
+
+**SpamShield AI — Making SMS communication safer through Machine Learning.**
